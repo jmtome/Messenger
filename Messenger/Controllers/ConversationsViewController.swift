@@ -13,19 +13,20 @@ class ConversationsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .red
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        
+        print(FirebaseAuth.Auth.auth().currentUser)
         validateAuth()
        
     }
 
     func validateAuth() {
+        //for some reason when registering the currentUser doesnt get set and it reads its nil
+        
         if FirebaseAuth.Auth.auth().currentUser == nil  {
             let vc = LoginViewController()
             let nav = UINavigationController(rootViewController: vc)

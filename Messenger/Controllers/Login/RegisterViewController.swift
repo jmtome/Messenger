@@ -213,6 +213,7 @@ class RegisterViewController: UIViewController {
             FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
                 guard authResult != nil , error == nil else {
                     print("Error creating user")
+                    print(authResult?.user)
                     return
                 } 
             }
@@ -222,6 +223,8 @@ class RegisterViewController: UIViewController {
             DatabaseManager.shared.insertUser(with: ChatAppUser(firstName: firstName,
                                                                 lastName: lastName,
                                                                 emailAddress: email))
+            
+            
             
             self.navigationController?.dismiss(animated: true, completion: nil)
         }
