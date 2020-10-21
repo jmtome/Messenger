@@ -7,6 +7,8 @@
 
 import UIKit
 import FirebaseAuth
+import FBSDKLoginKit
+import GoogleSignIn
 
 class ProfileViewController: UIViewController {
 
@@ -43,12 +45,19 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         
         
         let actionSheet = UIAlertController(title: "Are you sure you want to log out?",
-                                            message: "Logging out will log you out",
+                                            message: "Logging out will log you out ",
                                             preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         actionSheet.addAction(UIAlertAction(title: "Log Out", style: .destructive, handler: { [weak self] _ in
             guard let self = self else { return }
+            
+            //Log Out Facebook
+            FBSDKLoginKit.LoginManager().logOut()
+            
+            //Log Out Google
+            GIDSignIn.sharedInstance()?.signOut()
+            
             do {
                 try FirebaseAuth.Auth.auth().signOut()
                 
@@ -63,6 +72,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             }
             
         }))
+        
         present(actionSheet, animated: true, completion: nil)
         
         
