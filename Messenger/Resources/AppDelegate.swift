@@ -63,13 +63,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
         
         DatabaseManager.shared.userExists(with: email) { (exists) in
-           if !exists {
-               //insert to database
-               DatabaseManager.shared.insertUser(with: ChatAppUser(firstName: firstName,
-                                                                   lastName: lastName,
-                                                                   emailAddress: email))
-           }
-       }
+            if !exists {
+                //insert to database
+                let chatUser = ChatAppUser(firstName: firstName, lastName: lastName,  emailAddress: email)
+
+                DatabaseManager.shared.insertUser(with: chatUser, completion: { success in
+                    if success {
+                        
+                        if user.profile.hasImage {
+                            guard let url = user.profile.imageURL(withDimension: 200) else {
+                                return
+                            }
+                            let session = URLSession.shared.dataTask(with: url) { (data, response, error) in
+                                guard let data = data, error == nil else {
+                                    
+                                    return
+                                }
+                                
+                                //upload image
+                                let fileName = chatUser.profilePictureFileName
+                                StorageManager.shared.uploadProfilePicture(with: data, fileName: fileName) { (result) in
+                                    switch result {
+                                    case .success(let downloadURL):
+                                        print(downloadURL)
+                                        UserDefaults.standard.setValue(downloadURL, forKey: "profilePictureURL")
+                                    case .failure(let error):
+                                        print("storage manager error: \(error)")
+                                    }
+                                }
+                                
+                            } 
+                            
+                            session.resume()
+                            
+                            
+                        }
+                        
+                        
+                        
+                       
+                    }
+                })
+            }
+        }
         
         
         guard let authentication = user.authentication else {

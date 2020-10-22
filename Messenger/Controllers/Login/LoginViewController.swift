@@ -251,8 +251,10 @@ extension LoginViewController: LoginButtonDelegate {
             
         }
         
+        //facebook login
+        
         let facebookRequest = FBSDKLoginKit.GraphRequest(graphPath: "me",
-                                                         parameters: ["fields":"email, name"],
+                                                         parameters: ["fields":"email, first_name, last_name, picture.type(large)"],
                                                          tokenString: token,
                                                          version: nil,
                                                          httpMethod: .get)
@@ -264,24 +266,57 @@ extension LoginViewController: LoginButtonDelegate {
             }
             
             print("\(result)")
-            guard let username = result["name"] as? String,
-                  let email = result["email"] as? String else {
+           
+            guard let firstName = result["first_name"] as? String,
+                  let lastName = result["last_name"] as? String,
+                  let email = result["email"] as? String,
+                  let picture = result["picture"] as? [String: Any],
+                  let data = picture["data"] as? [String: Any],
+                  let pictureURL = data["url"] as? String else {
                 print("Failed to get email and name from FBResults")
                 return
             }
-            let nameComponents = username.components(separatedBy: " ")
-            guard nameComponents.count >= 2 else {
-                print("\(nameComponents)")
-                return
-                
-            }
             
-            let firstName = nameComponents.first!
-            let lastName = nameComponents.last!
             
+          
             DatabaseManager.shared.userExists(with: email) { (exists) in
                 if !exists {
-                    DatabaseManager.shared.insertUser(with: ChatAppUser(firstName: firstName, lastName: lastName, emailAddress: email))
+                    let chatUser = ChatAppUser(firstName: firstName, lastName: lastName,  emailAddress: email)
+
+                    DatabaseManager.shared.insertUser(with: chatUser) { (success) in
+                        if success {
+                            
+                            guard let url = URL(string: pictureURL) else {
+                                print("bad picture url")
+                                return
+                            }
+                            
+                            print("Downloading data from facebook image")
+                            
+                            let session = URLSession.shared.dataTask(with: url) { (data, response, error) in
+                                guard let data = data, error == nil else {
+                                    if let error = error {
+                                        print("failed to get data with error: \(error)")
+                                    }
+                                    return
+                                }
+                                
+                                print("got data from facebook, uploading ")
+                                //upload image
+                                let fileName = chatUser.profilePictureFileName
+                                StorageManager.shared.uploadProfilePicture(with: data, fileName: fileName) { (result) in
+                                    switch result {
+                                    case .success(let downloadURL):
+                                        print(downloadURL)
+                                        UserDefaults.standard.setValue(downloadURL, forKey: "profilePictureURL")
+                                    case .failure(let error):
+                                        print("storage manager error: \(error)")
+                                    }
+                                }
+                            }
+                            session.resume()
+                        }
+                    }
                 }
             }
             
