@@ -62,6 +62,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         print("Did log in with google user :\(firstName), \(lastName), email: \(email)")
         
         
+        UserDefaults.standard.set(email, forKey: "email")
+        
         DatabaseManager.shared.userExists(with: email) { (exists) in
             if !exists {
                 //insert to database

@@ -199,6 +199,9 @@ class LoginViewController: UIViewController {
             
             let user = result.user
             
+            UserDefaults.standard.set(email, forKey: "email")
+            
+            
             print("Successfully signed in with user :\(user)")
             self.navigationController?.dismiss(animated: true, completion: nil)
         }
@@ -266,6 +269,8 @@ extension LoginViewController: LoginButtonDelegate {
             }
             
             print("\(result)")
+            
+            
            
             guard let firstName = result["first_name"] as? String,
                   let lastName = result["last_name"] as? String,
@@ -277,6 +282,7 @@ extension LoginViewController: LoginButtonDelegate {
                 return
             }
             
+            UserDefaults.standard.set(email, forKey: "email")
             
           
             DatabaseManager.shared.userExists(with: email) { (exists) in
