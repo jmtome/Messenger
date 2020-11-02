@@ -27,6 +27,7 @@
 		C86B8776253E504C00984F63 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86B8775253E504C00984F63 /* DatabaseManager.swift */; };
 		C884BC70254F40E500CAD750 /* NewConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C884BC6F254F40E500CAD750 /* NewConversationCell.swift */; };
 		C8BCEA8F2545EC44002328A3 /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BCEA8E2545EC44002328A3 /* ConversationTableViewCell.swift */; };
+		C8CA30602550A06500802D53 /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CA305F2550A06500802D53 /* LocationPickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		C86B8775253E504C00984F63 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		C884BC6F254F40E500CAD750 /* NewConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationCell.swift; sourceTree = "<group>"; };
 		C8BCEA8E2545EC44002328A3 /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
+		C8CA305F2550A06500802D53 /* LocationPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				C81D7751253CCC8500B1EA57 /* NewConversationViewController.swift */,
 				C81D7754253CCC9E00B1EA57 /* ProfileViewController.swift */,
 				C851C55B25410CE8007C0A5F /* ChatViewController.swift */,
+				C8CA305F2550A06500802D53 /* LocationPickerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				C851C55C25410CE8007C0A5F /* ChatViewController.swift in Sources */,
 				C81D774C253CCC5D00B1EA57 /* PhotoViewerViewController.swift in Sources */,
 				C80598242541E56E00F81F0D /* StorageManager.swift in Sources */,
+				C8CA30602550A06500802D53 /* LocationPickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

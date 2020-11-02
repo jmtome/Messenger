@@ -14,42 +14,10 @@
             filePath = "Messenger/Controllers/ConversationsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "viewDidAppear(_:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9CDEBF63-6F2B-4A6B-AC34-632A085897CD"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Messenger/Controllers/Login/LoginViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "269"
-            endingLineNumber = "269"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "75953370-DFEE-43C2-82A2-E5DB572F96D1"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Messenger/Controllers/Login/LoginViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "284"
-            endingLineNumber = "284"
-            landmarkName = "unknown"
-            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -62,8 +30,8 @@
             filePath = "Messenger/Controllers/ProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +46,8 @@
             filePath = "Messenger/Controllers/ProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "createTableHeader()"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +62,8 @@
             filePath = "Messenger/Controllers/ProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "downloadImage(imageView:url:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -110,42 +78,10 @@
             filePath = "Messenger/Controllers/ProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
             landmarkName = "downloadImage(imageView:url:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EAB66A22-57C0-414F-A598-CD9150DA6F43"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Messenger/Resources/DatabaseManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
-            landmarkName = "createNewConversation(with:name:firstMessage:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DDBA9141-530D-4113-821A-BD15DF425BB7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Messenger/Controllers/Login/LoginViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "206"
-            endingLineNumber = "206"
-            landmarkName = "unknown"
-            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -158,10 +94,118 @@
             filePath = "Messenger/Controllers/ChatViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "408"
-            endingLineNumber = "408"
+            startingLineNumber = "460"
+            endingLineNumber = "460"
             landmarkName = "configureMediaMessageImageView(_:for:at:in:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FBB52282-F315-445F-950F-A2A23D5DD216"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Messenger/Controllers/LocationPickerViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "LocationPickerViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "FBB52282-F315-445F-950F-A2A23D5DD216 - 85acb468f130a80"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Messenger.LocationPickerViewController.(coordinates in _018F3E2697FD58C227CB2713E0A04D97).getter : Swift.Optional&lt;__C.CLLocationCoordinate2D&gt;"
+                  moduleName = "Messenger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/juanmanueltome/Desktop/UIkitApps/Messenger/Messenger/Controllers/LocationPickerViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "141">
+               </Location>
+               <Location
+                  uuid = "FBB52282-F315-445F-950F-A2A23D5DD216 - 85acb468f130a80"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Messenger.LocationPickerViewController.(coordinates in _018F3E2697FD58C227CB2713E0A04D97).setter : Swift.Optional&lt;__C.CLLocationCoordinate2D&gt;"
+                  moduleName = "Messenger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/juanmanueltome/Desktop/UIkitApps/Messenger/Messenger/Controllers/LocationPickerViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "FBB52282-F315-445F-950F-A2A23D5DD216 - 85acb468f130891"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Messenger.LocationPickerViewController.(coordinates in _018F3E2697FD58C227CB2713E0A04D97).modify : Swift.Optional&lt;__C.CLLocationCoordinate2D&gt;"
+                  moduleName = "Messenger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/juanmanueltome/Desktop/UIkitApps/Messenger/Messenger/Controllers/LocationPickerViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "FBB52282-F315-445F-950F-A2A23D5DD216 - 1cbf4bcc8cec7b39"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Messenger.LocationPickerViewController.(coordinates in _018F3E2697FD58C227CB2713E0A04D97).modify : Swift.Optional&lt;__C.CLLocationCoordinate2D&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Messenger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/juanmanueltome/Desktop/UIkitApps/Messenger/Messenger/Controllers/LocationPickerViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "FBB52282-F315-445F-950F-A2A23D5DD216 - 81835cca8d2dcbdf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Messenger.LocationPickerViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Messenger.LocationPickerViewController"
+                  moduleName = "Messenger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/juanmanueltome/Desktop/UIkitApps/Messenger/Messenger/Controllers/LocationPickerViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "298">
+               </Location>
+               <Location
+                  uuid = "FBB52282-F315-445F-950F-A2A23D5DD216 - fdc2023cc9dd9163"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Messenger.LocationPickerViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Messenger.LocationPickerViewController&gt;"
+                  moduleName = "Messenger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/juanmanueltome/Desktop/UIkitApps/Messenger/Messenger/Controllers/LocationPickerViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "233">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

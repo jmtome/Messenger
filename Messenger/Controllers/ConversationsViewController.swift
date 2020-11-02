@@ -29,6 +29,7 @@ class ConversationsViewController: UIViewController {
 
     
     
+    private var loginObserver: NSObjectProtocol?
     
     private let spinner = JGProgressHUD(style: .dark)
     
@@ -62,6 +63,16 @@ class ConversationsViewController: UIViewController {
         fetchConversations()
         startListeningForConversations()
         
+        loginObserver = NotificationCenter.default.addObserver(forName: .didLogInNotification,
+                                               object: nil,
+                                               queue: .main) { [weak self] (notification) in
+            guard let self = self else { return }
+            
+            self.navigationController?.dismiss(animated: true, completion: nil)
+            
+            self.startListeningForConversations()
+        }
+        
     }
     
     private func startListeningForConversations() {
@@ -69,6 +80,10 @@ class ConversationsViewController: UIViewController {
             return
         }
         
+        if let observer = loginObserver {
+            NotificationCenter.default.removeObserver(observer)
+        }
+         
         print("Starting conversation fetch...")
         
         let safeEmail = DatabaseManager.safeEmail(emailAddress: email)
@@ -106,11 +121,27 @@ class ConversationsViewController: UIViewController {
         let name = result.name
         let email = result.email
         
-        let vc = ChatViewController(with: email, id: nil)
-        vc.isNewConversation = true
-        vc.title = name
-        vc.navigationItem.largeTitleDisplayMode = .never
-        navigationController?.pushViewController(vc, animated: true)
+        
+        DatabaseManager.shared.conversationExists(with: email) { [weak self] (result) in
+            switch result {
+            case .success(let conversationID):
+                let vc = ChatViewController(with: email, id: conversationID)
+                vc.isNewConversation = false
+                vc.title = name
+                vc.navigationItem.largeTitleDisplayMode = .never
+                self?.navigationController?.pushViewController(vc, animated: true)
+                
+            case .failure(_):
+                let vc = ChatViewController(with: email, id: nil)
+                vc.isNewConversation = true
+                vc.title = name
+                vc.navigationItem.largeTitleDisplayMode = .never
+                self?.navigationController?.pushViewController(vc, animated: true)
+                
+                
+            }
+        }
+        
         
     }
     override func viewDidLayoutSubviews() {
@@ -175,5 +206,30 @@ extension ConversationsViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            //begin delete
+            
+            let conversationID = conversations[indexPath.row].id
+            
+            tableView.beginUpdates()
+            
+            DatabaseManager.shared.deleteConversation(conversationId: conversationID) { [weak self] (success) in
+                if success {
+                    self?.conversations.remove(at: indexPath.row)
+                    self?.tableView.deleteRows(at: [indexPath], with: .left)
+                    
+                }
+            }
+            
+            
+            tableView.endUpdates()
+        }
     }
 }
